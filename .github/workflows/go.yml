@@ -24,13 +24,13 @@ jobs:
       run: |
         GOOS=windows
         GOARCH=amd64
-        go build
+        go build -o xxhash.exe
         
     - name: Build Linux
       run: |
         GOOS=linux
         GOARCH=amd64
-        go build
+        go build -o xxhash
 
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
@@ -39,5 +39,5 @@ jobs:
         prerelease: false
         title: "Release Build"
         files: |
-          go-xxhash
-          go-xxhash.exe
+          xxhash
+          xxhash.exe
